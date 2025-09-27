@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mental Health Assistant Chatbot</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-2 sm:p-4">
+  <div class="w-full max-w-sm sm:max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden fade-in">
+    
+    <div class="bg-gradient-to-r from-blue-500 to-purple-600 p-3 sm:p-4 text-white relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-full opacity-10">
+        <div class="absolute -top-5 -left-5 w-16 h-16 bg-white rounded-full"></div>
+        <div class="absolute top-5 right-5 w-12 h-12 bg-white rounded-full"></div>
+        <div class="absolute bottom-2 left-10 w-8 h-8 bg-white rounded-full"></div>
+      </div>
+      
+      <div class="flex items-center">
+        <div class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center mr-2 sm:mr-3">
+          <i class="fas fa-seedling text-white text-sm sm:text-base"></i>
+        </div>
+        <div>
+          <h2 class="text-base sm:text-lg font-semibold">Mental Health Assistant</h2>
+          <p class="text-xs sm:text-sm opacity-90">Online • Ready to help</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-container p-2 sm:p-3 bg-gray-50" id="chatbox">
+      
+      <div class="bot-message message-bubble slide-up">
+        <div class="flex items-start">
+        <div class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-blue-500 flex items-center justify-center text-white mr-2 flex-shrink-0">
+          <i class="fas fa-robot text-xs sm:text-sm"></i>
+        </div>
+          <div class="flex-1">
+            <p class="font-medium text-sm sm:text-base">Mental Health Assistant</p>
+            <p class="text-xs sm:text-sm">Hello! I'm here to support your mental wellness journey. You can ask me about common student challenges, available resources, or just chat. How are you feeling today?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="p-2 sm:p-3 bg-white border-t border-gray-200">
+      <div class="flex space-x-2">
+        <input 
+          type="text" 
+          id="userInput" 
+          placeholder="Ask about mental health..." 
+          class="message-input flex-1 p-2 border border-gray-300 rounded-full focus:outline-none focus:border-blue-500 transition-all duration-300 text-xs sm:text-sm"
+          onkeypress="if(event.key==='Enter'){sendMessage()}"
+        >
+        <button 
+          onclick="sendMessage()" 
+          class="send-btn bg-gradient-to-r from-blue-500 to-purple-600 text-white p-2 rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
+        >
+          <i class="fas fa-paper-plane text-xs sm:text-sm"></i>
+        </button>
+      </div>
+      <p class="text-xs text-gray-500 mt-1 text-center">Press Enter to send</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

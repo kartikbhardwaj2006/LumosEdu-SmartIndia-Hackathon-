@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Psychological Intervention System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      
+      tailwind.config = { darkMode: 'class' };
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"
+      defer
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100">
+    
+    <header
+      class="sticky top-0 z-30 backdrop-blur bg-white/70 dark:bg-slate-900/70 border-b border-slate-200/60 dark:border-slate-700/60"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between"
+      >
+        <a href="#home" class="flex items-center gap-2 group">
+          <div
+            class="w-9 h-9 rounded-xl bg-blue-600 text-white grid place-items-center glow"
+          >
+            🧠
+          </div>
+          <div>
+            <div class="text-base font-extrabold tracking-tight">
+             LumosEdu
+                   </div>
+            <div class="text-[11px] text-slate-500 dark:text-slate-400">
+              Digital Psychological Support
+            </div>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#booking" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Booking</a>
+          <a href="#resources" class="hover:text-blue-600 dark:hover:text-blue-400 transition"
+            >Resources</a
+          >
+          <a href="#forum" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Peer Forum</a>
+          <a href="#admin" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Admin</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button
+            id="themeToggle"
+            aria-label="Toggle dark mode"
+            class="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800"
+          >
+            <span id="themeIcon" class="text-base">🌙</span>
+            <span class="text-sm">Theme</span>
+          </button>
+          <button
+            id="openBookingBtn"
+            class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 active:scale-[.98] transition"
+          >
+            <span>Book Counsellor</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+
+    <section id="home" class="relative overflow-hidden">
+      <div class="absolute inset-0 animated-gradient opacity-50"></div>
+      <div
+        class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 grid lg:grid-cols-2 gap-10 items-center"
+      >
+        <div data-aos="fade-right">
+          <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight">
+            Mental wellness for every student
+          </h1>
+          <p class="mt-4 text-slate-600 dark:text-slate-300">
+            Evidence-informed first-aid chat, confidential booking, resources in
+            regional languages, peer support, and anonymous analytics for
+            institutions.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a
+              href="#resources"
+              class="px-4 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-300 hover:text-blue-700 dark:hover:text-blue-300 transition"
+              >Browse Resources</a
+            >
+          </div>
+          <ul class="mt-6 text-sm text-slate-600 dark:text-slate-300 grid sm:grid-cols-2 gap-2">
+            <li>• PHQ‑9, GAD‑7 screening ready</li>
+            <li>• Institution customization</li>
+            <li>• Offline counsellor mapping</li>
+            <li>• Anonymous trend analytics</li>
+          </ul>
+        </div>
+        <div class="relative" data-aos="fade-left">
+          <div
+            class="rounded-2xl bg-white dark:bg-slate-800 shadow-xl border border-slate-200 dark:border-slate-700 p-4 sm:p-6"
+          >
+            <div
+              class="aspect-video rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 grid place-items-center text-slate-500 dark:text-slate-400"
+            >
+              <div class="text-center px-6">
+                <div class="text-xl font-semibold">
+                  Problem Explanation Video
+                </div>
+                <div class="text-sm">To be prepared by students</div>
+              </div>
+            </div>
+            <div class="mt-4 grid grid-cols-2 gap-3 text-center text-sm">
+              <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-700/50">Anxiety • Depression</div>
+              <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-700/50">Sleep • Burnout</div>
+              <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-700/50">Academic Stress</div>
+              <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-700/50">Social Isolation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <main
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24 pb-28"
+    >
+      
+      <section
+        id="booking"
+        aria-label="Confidential Booking"
+        data-aos="fade-up"
+      >
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-2xl sm:text-3xl font-bold">Confidential Booking</h2>
+          <button
+            id="openBookingBtn2"
+            class="hidden sm:inline-flex px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
+          >
+            Book Now
+          </button>
+        </div>
+        <p class="text-slate-600 dark:text-slate-300 mb-6">
+          Book an appointment with on-campus counsellors or connect to
+          helplines. Your identity can be hidden if you choose.
+        </p>
+        <div
+          class="rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm p-4 sm:p-6"
+        >
+          <div class="grid md:grid-cols-3 gap-4 text-sm">
+            <div class="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-900/40">
+              <div class="font-semibold">On‑Campus Counsellor</div>
+              <div class="text-slate-600 dark:text-slate-300">Mon‑Fri • 10:00–16:00</div>
+            </div>
+            <div class="p-4 rounded-xl bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-100 dark:border-emerald-900/40">
+              <div class="font-semibold">Helpline (24×7)</div>
+              <div class="text-slate-600 dark:text-slate-300">112 • 1800‑599‑0019</div>
+            </div>
+            <div class="p-4 rounded-xl bg-purple-50 dark:bg-purple-900/20 border border-purple-100 dark:border-purple-900/40">
+              <div class="font-semibold">Wellness Workshops</div>
+              <div class="text-slate-600 dark:text-slate-300">Every Saturday</div>
+            </div>
+          </div>
+          <div class="mt-4">
+            <button
+              id="openBookingBtn3"
+              class="w-full sm:w-auto px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
+            >
+              Open Booking Form
+            </button>
+          </div>
+        </div>
+      </section>
+
+ 
+      <section
+        id="resources"
+        aria-label="Psychoeducational Resource Hub"
+        data-aos="fade-up"
+      >
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4">Resources</h2>
+        <p class="text-slate-600 dark:text-slate-300 mb-6">
+          Videos, audios, and guides in regional languages.
+        </p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+         
+          <article
+            class="rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden"
+          >
+            <div class="aspect-video">
+              <iframe class="w-full h-full" src="https://www.youtube.com/embed/VSgRAJX9gUc?si=NEmaxpz1JM3FQ9yc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="p-4">
+              <h3 class="font-semibold">Deep Breathing in 4‑7‑8</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300">
+                A quick technique to reduce anxiety.
+              </p>
+            </div>
+          </article>
+          
+          <article
+            class="rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden"
+          >
+            <div class="p-4">
+              <h3 class="font-semibold">Relaxation Audio</h3>
+              <audio controls class="w-full mt-2">
+                <source src="Stress Relief Audio.mp3" type="audio/mpeg" />
+              </audio>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">
+                Guided calm ambient music.
+              </p>
+            </div>
+          </article>
+         
+          <article
+            class="rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden"
+          >
+            <div class="p-4">
+              <h3 class="font-semibold">Study Stress Guide</h3>
+              <ul class="list-disc ml-5 text-sm text-slate-700 dark:text-slate-300 space-y-1 mt-2">
+                <li>Pomodoro (25/5), realistic goals</li>
+                <li>Sleep hygiene: fixed schedule</li>
+                <li>Hydration, light movement breaks</li>
+                <li>Talk to mentors early</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+ 
+      <section id="forum" aria-label="Peer Support" data-aos="fade-up">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4">Peer Support Forum</h2>
+        <p class="text-slate-600 dark:text-slate-300 mb-6">
+          Anonymous, moderated posts. Be kind. No personal identifiers.
+        </p>
+        <div class="grid lg:grid-cols-3 gap-6">
+          <div
+            class="lg:col-span-2 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm p-4 sm:p-6"
+          >
+            <form id="postForm" class="flex flex-col gap-3">
+              <textarea
+                id="postText"
+                rows="3"
+                placeholder="Share your experience or ask a question..."
+                class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none bg-white dark:bg-slate-900"
+                required
+              ></textarea>
+              <div class="flex items-center justify-between text-sm">
+                <label class="inline-flex items-center gap-2">
+                  <input
+                    id="postAnon"
+                    type="checkbox"
+                    class="rounded border-slate-300 dark:border-slate-600"
+                    checked
+                  />
+                  <span>Post anonymously</span>
+                </label>
+                <button
+                  class="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
+                >
+                  Post
+                </button>
+              </div>
+            </form>
+            <div
+              id="posts"
+              class="mt-4 space-y-3 max-h-96 overflow-y-auto no-scrollbar pr-1"
+            ></div>
+          </div>
+          <aside
+            class="rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm p-4 sm:p-6 text-sm"
+          >
+            <h3 class="font-semibold mb-2">Moderation Rules</h3>
+            <ul class="list-disc ml-5 space-y-1 text-slate-700 dark:text-slate-300">
+              <li>Respect and empathy only</li>
+              <li>No hate, spam, or triggers</li>
+              <li>No personal contact sharing</li>
+              <li>Seek help if in crisis</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      
+      <section id="admin" aria-label="Admin Dashboard" data-aos="fade-up">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4">Admin Dashboard</h2>
+        <p class="text-slate-600 dark:text-slate-300 mb-6">
+          Anonymous trends from screening tools to guide campus policies.
+        </p>
+        <div class="grid lg:grid-cols-2 gap-6">
+          <div
+            class="rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm p-4 sm:p-6"
+          >
+            <h3 class="font-semibold mb-3">
+              Average Scores by Month (PHQ‑9 & GAD‑7)
+            </h3>
+            <canvas id="trendChart" class="w-full h-64"></canvas>
+          </div>
+          <div
+            class="rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm p-4 sm:p-6"
+          >
+            <h3 class="font-semibold mb-3">Screening Distribution</h3>
+            <canvas id="distChart" class="w-full h-64"></canvas>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+
+    <div id="bookingModal" class="fixed inset-0 z-50 hidden">
+      <div class="absolute inset-0 bg-slate-900/50"></div>
+      <div
+        class="relative mx-auto mt-20 w-[92vw] max-w-2xl rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-700"
+      >
+        <div
+          class="p-4 sm:p-6 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between"
+        >
+          <div class="font-semibold">Book Confidential Appointment</div>
+          <button id="closeBooking" class="text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200">
+            
+          </button>
+        </div>
+        <form id="bookingForm" class="p-4 sm:p-6 grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="text-sm text-slate-600 dark:text-slate-300">Name (optional)</label>
+            <input
+              name="name"
+              class="mt-1 w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none bg-white dark:bg-slate-900"
+              placeholder="Optional"
+            />
+          </div>
+          <div>
+            <label class="text-sm text-slate-600 dark:text-slate-300">Email (optional)</label>
+            <input
+              name="email"
+              type="email"
+              class="mt-1 w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none bg-white dark:bg-slate-900"
+              placeholder="Optional"
+            />
+          </div>
+          <div>
+            <label class="text-sm text-slate-600 dark:text-slate-300">Concern</label>
+            <select
+              name="concern"
+              class="mt-1 w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none bg-white dark:bg-slate-900"
+              required
+            >
+              <option value="">Select</option>
+              <option>Anxiety</option>
+              <option>Depression</option>
+              <option>Sleep</option>
+              <option>Academic Stress</option>
+              <option>Relationship</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-sm text-slate-600 dark:text-slate-300">Preferred Mode</label>
+            <select
+              name="mode"
+              class="mt-1 w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none bg-white dark:bg-slate-900"
+              required
+            >
+              <option value="">Select</option>
+              <option>In‑Person</option>
+              <option>Online</option>
+              <option>Phone</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2">
+            <label class="text-sm text-slate-600 dark:text-slate-300">Message (optional)</label>
+            <textarea
+              name="message"
+              rows="3"
+              class="mt-1 w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none bg-white dark:bg-slate-900"
+              placeholder="Share any details"
+            ></textarea>
+          </div>
+          <div class="sm:col-span-2 flex items-center justify-between">
+            <label class="inline-flex items-center gap-2 text-sm">
+              <input
+                name="anonymous"
+                type="checkbox"
+                class="rounded border-slate-300 dark:border-slate-600"
+                checked
+              />
+              <span>Book anonymously</span>
+            </label>
+            <button
+              class="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
+            >
+              Submit
+            </button>
+          </div>
+          <div class="sm:col-span-2 text-xs text-slate-500 dark:text-slate-400">
+            We store only necessary booking metadata locally for this demo.
+          </div>
+        </form>
+      </div>
+    </div>
+    <!--  Chatbot code  -->
+       <button class="chat-toggle animate__animated animate__shakeY animate__infinite" onclick="openChat()"><img src="images1.jpg" alt="click here"></button>
+
+    
+    <div class="chatbot" id="chatbot">
+        <div class="chatbot-header">
+            <span>Chatbot</span>
+            <button onclick="closeChat()">X</button>
+        </div>
+
+        <iframe src="https://lumoseduchatbot.netlify.app/" title="Chatbot"></iframe>
+    </div>
+    <script>
+        const chatbot = document.getElementById("chatbot");
+        const toggleBtn = document.querySelector(".chat-toggle");
+
+        function openChat() {
+            chatbot.style.display = "flex";
+            toggleBtn.style.display = "none"; 
+        }
+
+        function closeChat() {
+            chatbot.style.display = "none";
+            toggleBtn.style.display = "block"; 
+        }
+    </script>
+
+
+    <footer class="mt-20 border-t border-slate-200 dark:border-slate-700">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-sm text-slate-600 dark:text-slate-300 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between"
+      >
+        <div>© <span id="year"></span>LumosEdu • Open‑Source Demo</div>
+        <div class="flex gap-4">
+          <a href="#admin" class="hover:text-blue-700 dark:hover:text-blue-300">Admin</a>
+          <a href="#resources" class="hover:text-blue-700 dark:hover:text-blue-300">Resources</a>
+          <a href="#booking" class="hover:text-blue-700 dark:hover:text-blue-300">Book</a>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
